@@ -7,9 +7,10 @@ order: 1
 photo: joao-molino.jpg
 links:
   email: molino@usp.br
-  orcid: # https://orcid.org/0000-0000-0000-0000
-  lattes: # http://lattes.cnpq.br/...
-  scholar: # https://scholar.google.com/citations?user=...
+  orcid: https://orcid.org/0000-0003-2475-9807
+  lattes: http://lattes.cnpq.br/2538025770390177
+  scholar: https://scholar.google.com/citations?user=kLsTv9IAAAAJ&hl=en
+  linkedin: https://www.linkedin.com/in/molinojvd/
   fapesp: # https://bv.fapesp.br/en/pesquisador/...
 ---
 
