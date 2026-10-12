@@ -1,0 +1,95 @@
+---
+import { Image } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
+import { href } from "../lib/url";
+import { hwImage, stageLabel } from "../lib/hardware";
+
+interface Props {
+  item: CollectionEntry<"hardware">;
+}
+const { item } = Astro.props;
+const d = item.data;
+const img = hwImage(d.hero);
+---
+
+<a class="hw-card" href={href(`/resources/hardware/${item.id}/`)}>
+  <div class="media" data-stage={d.stage}>
+    {
+      img ? (
+        <Image src={img} alt="" width={640} height={480} />
+      ) : (
+        <span class="ph mono">{d.name}</span>
+      )
+    }
+  </div>
+  <div class="body">
+    <span class={`stage mono s-${d.stage}`}>{stageLabel[d.stage]}</span>
+    <h3>{d.name}</h3>
+    <p>{d.summary}</p>
+  </div>
+</a>
+
+<style>
+  .hw-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+    color: inherit;
+    text-decoration: none;
+    transition:
+      transform 0.2s var(--ease),
+      border-color 0.2s;
+  }
+  .hw-card:hover,
+  .hw-card:focus-visible {
+    transform: translateY(-3px);
+    border-color: var(--accent);
+  }
+  .media {
+    aspect-ratio: 4 / 3;
+    background: var(--surface-2);
+    display: grid;
+    place-items: center;
+  }
+  .media :global(img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .ph {
+    color: var(--ink-faint);
+  }
+  .body {
+    padding: 1.1rem 1.2rem 1.3rem;
+  }
+  .stage {
+    display: inline-block;
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: var(--accent-soft);
+    border-radius: 99px;
+    padding: 0.2rem 0.6rem;
+    margin-bottom: 0.7rem;
+  }
+  .s-preliminary,
+  .s-future {
+    color: var(--gold);
+    background: transparent;
+    border: 1px dashed var(--gold);
+  }
+  h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.4rem;
+  }
+  p {
+    color: var(--ink-soft);
+    font-size: 0.88rem;
+    margin: 0;
+  }
+</style>

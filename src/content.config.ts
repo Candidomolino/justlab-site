@@ -102,4 +102,44 @@ const news = defineCollection({
   }),
 });
 
-export const collections = { people, research, projects, news };
+const hardware = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/hardware" }),
+  schema: z.object({
+    name: z.string(),
+    title: z.string(),
+    summary: z.string(),
+    group: z.enum(["reactor", "control", "instrument"]),
+    stage: z.enum([
+      "in-use",
+      "operating",
+      "bench",
+      "design-closed",
+      "preliminary",
+      "future",
+    ]),
+    scale: str(),
+    cost: str(),
+    order: z.number().nullish().transform((v) => v ?? 99),
+    hero: str(),
+    authors: str(),
+    license: str(),
+    files: str(),
+    specs: z
+      .array(z.object({ label: z.string(), value: z.string() }))
+      .nullish()
+      .transform((v) => v ?? []),
+    images: z
+      .array(
+        z.object({
+          file: z.string(),
+          alt: z.string(),
+          caption: z.string(),
+          credit: z.enum(["photo", "figure"]).default("figure"),
+        }),
+      )
+      .nullish()
+      .transform((v) => v ?? []),
+  }),
+});
+
+export const collections = { people, research, projects, news, hardware };

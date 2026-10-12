@@ -1,0 +1,123 @@
+---
+import { getCollection } from "astro:content";
+import Base from "../../../layouts/Base.astro";
+import SectionHead from "../../../components/SectionHead.astro";
+import HardwareCard from "../../../components/HardwareCard.astro";
+import { href } from "../../../lib/url";
+import { groups } from "../../../lib/hardware";
+
+const all = (await getCollection("hardware")).sort(
+  (a, b) => a.data.order - b.data.order,
+);
+---
+
+<Base
+  title="Open hardware"
+  description="Seven open-hardware projects from the JUST Lab: photobioreactors, light control, sensors and a 3D-printed centrifuge — each stating what has not yet been measured."
+>
+  <section class="wrap">
+    <p><a href={href("/resources")}>← Resources</a></p>
+    <SectionHead
+      kicker="Open hardware"
+      title="Equipment we design, build and document openly"
+      lead="Seven projects, from a R$ 77 centrifuge to a monitoring module for 100 L bags. Each one says where it stands — and what it has not yet measured."
+    />
+
+    <div class="thread">
+      <div>
+        <h3>Open by default</h3>
+        <p>
+          Hardware is released under CERN-OHL-S-2.0 (strongly reciprocal: modify and
+          distribute, and you reopen), documentation and data under CC-BY-4.0.
+        </p>
+      </div>
+      <div>
+        <h3>We say what we have not measured</h3>
+        <p>
+          Every project has a “not yet measured” section. Dimensions come from the
+          CAD, by script — never read off a photograph.
+        </p>
+      </div>
+      <div>
+        <h3>Cost is part of the argument</h3>
+        <p>
+          The microcentrifuge costs R$ 77 against R$ 5,500 for the commercial
+          reference unit. The monitoring module aims at R$ 2,000 instead of tens of
+          thousands.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  {
+    groups.map((g) => {
+      const items = all.filter((h) => h.data.group === g.id);
+      return (
+        items.length > 0 && (
+          <section class="wrap group">
+            <h2>{g.title}</h2>
+            <p class="lead">{g.lead}</p>
+            <div class="grid">
+              {items.map((item) => (
+                <HardwareCard item={item} />
+              ))}
+            </div>
+          </section>
+        )
+      );
+    })
+  }
+
+  <section class="wrap note">
+    <p class="mono">
+      Design files for these projects are being prepared for public release. None has
+      a DOI yet; this page will link them once they exist. Photographs: João Vitor Dutra
+      Molino. Technical figures: CC-BY-4.0.
+    </p>
+  </section>
+</Base>
+
+<style>
+  .thread {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.6rem 2.2rem;
+    margin-top: 2.4rem;
+    padding-block: 1.6rem;
+    border-block: 1px solid var(--line);
+  }
+  .thread h3 {
+    font-size: 1rem;
+    margin-bottom: 0.35rem;
+  }
+  .thread p {
+    color: var(--ink-soft);
+    font-size: 0.9rem;
+    margin: 0;
+  }
+  .group {
+    padding-top: 2.6rem;
+  }
+  .group h2 {
+    font-size: 1.4rem;
+  }
+  .lead {
+    color: var(--ink-soft);
+    max-width: 62ch;
+    margin-top: 0.5rem;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.2rem;
+    margin-top: 1.5rem;
+  }
+  .note {
+    padding-block: 2.6rem 1rem;
+  }
+  .note p {
+    color: var(--ink-faint);
+    font-size: 0.72rem;
+    max-width: 78ch;
+  }
+</style>
