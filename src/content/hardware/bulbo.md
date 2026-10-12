@@ -7,7 +7,7 @@ stage: future
 scale: From a 100 mL flask to a 100 L bag
 cost: Target about R$ 2,000 (instead of tens of thousands)
 order: 6
-hero: bulbo-02-esquema-eletronico.svg
+hero: bulbo-01-airlock-seringa.jpg
 authors: João Vitor Dutra Molino — DEBIQ, EEL-USP
 license: Open licence (to be set with the first release)
 files: Decision log, build plan, bill of materials, a 23 KB design description, illustrations, lid-mould plan, pinout and firmware are in the group's repository. Nothing is fabricated and nothing is public.

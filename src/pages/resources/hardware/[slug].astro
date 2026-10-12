@@ -13,10 +13,12 @@ export async function getStaticPaths() {
 const { item } = Astro.props;
 const d = item.data;
 const { Content } = await render(item);
-const hero = hwImage(d.hero);
+const heroSrc = hwImage(d.hero);
+const showHero = !!heroSrc && heroSrc.width > heroSrc.height * 1.2;
+const heroIsDiagram = /\.(svg|png)$/i.test(d.hero ?? "");
 const gallery = d.images
   .map((i) => ({ ...i, src: hwImage(i.file) }))
-  .filter((i) => i.src);
+  .filter((i) => i.src && !(showHero && i.file === d.hero));
 ---
 
 <Base title={`${d.name} — open hardware`} description={d.summary}>
@@ -27,9 +29,9 @@ const gallery = d.images
     <p class="subtitle">{d.title}</p>
 
     {
-      hero && (
-        <figure class="hero">
-          <Image src={hero} alt="" width={1200} loading="eager" />
+      showHero && (
+        <figure class:list={["hero", { diagram: heroIsDiagram }]}>
+          <Image src={heroSrc!} alt="" width={1200} loading="eager" />
         </figure>
       )
     }
@@ -77,6 +79,7 @@ const gallery = d.images
                   {g.caption}
                   <span class="credit mono">
                     {g.credit === "photo" ? "Photo: João Vitor Dutra Molino" : "Figure: CC-BY-4.0"}
+                    {g.lang === "pt" && " · Labels in Portuguese"}
                   </span>
                 </figcaption>
               </figure>
@@ -137,6 +140,10 @@ const gallery = d.images
     border-radius: var(--radius);
     border: 1px solid var(--line);
     display: block;
+  }
+  .hero.diagram :global(img) {
+    object-fit: contain;
+    background: #fff;
   }
   .facts {
     display: grid;

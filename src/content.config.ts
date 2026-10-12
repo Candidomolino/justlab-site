@@ -135,6 +135,7 @@ const hardware = defineCollection({
           alt: z.string(),
           caption: z.string(),
           credit: z.enum(["photo", "figure"]).default("figure"),
+          lang: z.enum(["en", "pt"]).nullish(),
         }),
       )
       .nullish()

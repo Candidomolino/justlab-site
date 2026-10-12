@@ -26,9 +26,11 @@ images:
     alt: A digital caliper measuring the mouth of a glass flask on a lab bench
     caption: Surveying the neck with a caliper. Mouth and thread define the lid interfaces and must be measured before the mould is made.
   - file: octinho-03-montagem.png
+    lang: pt
     alt: Schematic of the proposed reactor assembly with unbuilt parts in dashed lines
     caption: Proposed assembly. Dashed lines mark structure that has not been built.
   - file: octinho-04-interfaces.png
+    lang: pt
     alt: Diagram of the planned input and output interfaces on the reactor lid
     caption: The five pass-throughs of the designed lid, with no physical layout defined yet.
 ---

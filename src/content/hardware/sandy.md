@@ -21,9 +21,9 @@ images:
     credit: photo
     alt: Brown PVC legs with a white top plate and a plastic bag hanging below it
     caption: The assembled reactor. The bag hangs from the green ring in the top plate; the silicone tube running to the bottom is the sparger. The white sensor on the leg logs temperature and humidity.
-  - file: sandy-03-eletrico.png
-    alt: Wiring diagram of the reactor's lighting system
-    caption: Electrical schematic.
+  - file: sandy-02-montagem-cotas.svg
+    alt: Technical drawing of the reactor in front view and plan view, dimensioned in millimetres
+    caption: "Front view and plan of the top plate. Dimensions in millimetres from the Bag_PBRv2 CAD model; L_LED and H_total are shown by symbol because they still require measurement. Redrawn to show the current 24 V SMD 4014 LED bars."
 ---
 
 SANDY is the smallest of the three reactors and the simplest to reproduce: a
@@ -44,5 +44,6 @@ bench.
 The dimensions marked by symbol in the drawing — `L_LED` and `H_total` — still
 depend on measurement.
 
-<!-- TODO(figure): sandy-02-montagem-cotas.png ("fig1_montagem", Bag_PBRv2 dimensioned drawing) still describes the OLD 4 × 12 V aluminium-PCB LED bars. SANDY now uses the 24 V SMD 4014 bar shared with OCTO/OCTinho. Update the figure (label only; numeric dimensions must stay from the CAD) before adding it to `images`. -->
+<!-- TODO(figure): sandy-03-eletrico.png (electrical schematic, Portuguese) still shows the OLD 12 V supply and 12 V bars. Hold until redrawn for the 24 V SMD 4014 bar and Light_control. -->
+<!-- NOTE(figure): sandy-02 was redrawn as an English SVG with the 24 V SMD 4014 bar label. Re-export from the CAD/script when convenient so the outlines are CAD-derived. -->
 <!-- TODO(authorship): author list/order and funder pending. SANDY files live outside the HARDWARE folder (shared folder "IC - BARBARA"). -->

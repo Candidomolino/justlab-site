@@ -33,9 +33,11 @@ images:
     alt: Orange 3D-printed cylindrical microcentrifuge, assembled and closed
     caption: A complete unit in orange PLA, closed and latched. The metal rod on the left is the hinge pin.
   - file: saci-04-montagem.png
+    lang: pt
     alt: Sectioned technical drawing of the microcentrifuge with dimensions in millimetres
     caption: "Axial section and plan view, dimensioned in millimetres. Outlines come from slicing the CAD mesh, not from a photograph. Blue: commercial component. Purple: rotor. Red: dimension still to be determined."
   - file: saci-05-eletrico.png
+    lang: pt
     alt: Wiring diagram with a 12 V supply, two switches in series and a DC motor
     caption: Electrical schematic. The lid limit switch is in series with the motor — it is the interlock.
   - file: saci-06-pellet-miniprep.jpg

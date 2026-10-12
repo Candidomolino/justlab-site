@@ -18,12 +18,14 @@ specs:
   - { label: Typical load, value: "4 × 24 V / 14 W bars = 56 W, 2.33 A → 24 V / 5 A supply, T3A fuse" }
 images:
   - file: light-control-01-diagrama.png
+    lang: pt
     alt: Wiring diagram with a 24 V supply, fuse, MOSFET module, ESP32 and LED bars
     caption: Electrical diagram. The fuse goes on the positive rail, ahead of everything; the bypass switch is in parallel with the MOSFET.
   - file: light-control-02-placa-3d.png
     alt: 3D render of a board with cut-outs for electronic modules
     caption: Render of the printed support board, which positions the supply, converter, ESP32, RTC and MOSFET module.
   - file: light-control-03-placa-plano.png
+    lang: pt
     alt: Dimensioned plan drawing of the support board showing the position of each module
     caption: Dimensioned plan of the same board, with the position of each module.
 ---

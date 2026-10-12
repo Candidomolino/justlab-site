@@ -14,7 +14,7 @@ specs:
   - { label: Vessel, value: "Glass carboy, nominal 20 L · intended working volume 20 L (not yet verified)" }
   - { label: Structure, value: "Octagonal · PLA segments (Bambu Lab A1) + PVC tubes, nominal 25 mm" }
   - { label: Segment (CAD), value: "Ø25.4 bore · Ø40 outside · envelope 174.017 × 63.120 × 45 mm" }
-  - { label: Lighting, value: "8 SMD 4014 bars, 24 V, cool white, 500 mm — rated 14 W each, 112 W total" }
+  - { label: Lighting, value: "8 SMD 4014 bars, 24 V, cool white, 500 mm — power per bar not yet verified (seller listing, not manufacturer data)" }
   - { label: Mixing, value: "Bubble column · air pump rated up to 80 L/min (pump capacity, not measured flow)" }
   - { label: Lid, value: "Moulded blue silicone (Redelease kit) · 2 gas ports" }
   - { label: Control, value: "Manual — will receive the Light_control node" }
@@ -33,9 +33,11 @@ images:
     alt: Blue cylindrical silicone lid with two holes on a bench next to a ruler
     caption: The moulded silicone lid with its two gas ports. The surface defects appeared on demoulding.
   - file: octo-04-montagem.png
+    lang: pt
     alt: Schematic elevation and plan of the reactor showing eight tubes and eight LED bars
     caption: Elevation and plan. Schematic figure, not to scale — do not use the proportions for fabrication.
   - file: octo-05-eletrica-gas.png
+    lang: pt
     alt: Block diagram of the electrical circuit and the air path through the reactor
     caption: Electrical circuit and gas circuit.
 ---
@@ -66,8 +68,9 @@ been measured (the 80 L/min is the pump's rated capacity). Light uniformity arou
 the carboy has not been mapped, and **PPFD must be reported in µmol photons m⁻² s⁻¹
 (400–700 nm)**, not in lux, which weights for human vision and does not apply here.
 
-There is also a power item: eight bars add up to a rated 112 W, above the 100 W
-supply used on SANDY. And a CAD item: the STL mesh has a nearly degenerate face
+There is also a power item: the per-bar power is only known from the seller's
+listing. At the 14 W used in our design notes, eight bars would draw 112 W — above
+the 100 W supply used on SANDY. And a CAD item: the STL mesh has a nearly degenerate face
 that must be reviewed before fabrication is released.
 
 The autoclavability of the silicone is reported from the supplier and from use,

@@ -6,7 +6,7 @@ group: control
 stage: design-closed
 scale: Inline, on the reactor tube
 order: 5
-hero: light-sensor-01-diagrama.svg
+hero: light-sensor-02-luva-metades.jpg
 license: CERN-OHL-S-2.0 · CC-BY-4.0 (hardware and documentation) · MIT (firmware)
 files: Design note (DENSITOMETRO.md), firmware (tube_od_sensor.ino), SVG diagram and photos of the printed sleeve. Not yet public and no DOI.
 specs:
@@ -19,6 +19,7 @@ specs:
   - { label: Power, value: "Entire circuit at 3.3 V, over USB" }
 images:
   - file: light-sensor-01-diagrama.svg
+    lang: pt
     alt: Diagram with the ESP32 wiring and a section showing the light path through the tube
     caption: Wiring and optical geometry. On the right, the section of the sleeve — LED on one side, sensor on the other, culture in between.
   - file: light-sensor-02-luva-metades.jpg
