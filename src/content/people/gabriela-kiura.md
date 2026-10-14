@@ -14,12 +14,10 @@ links:
   linkedin: https://www.linkedin.com/in/gabriela-tanaka-kiura-8a1005306
 project:
   title: >-
-    Chlamydomonas reinhardtii as a Surface-Display Platform for Controlled
-    Delivery and M-Cell Targeting: Application of the CKS9 Peptide in Oral-Vaccine
-    Models Integrated with Genetic Circuits and Acid-Tolerant Biosensors
+    Dual Cell-Wall Anchoring in Chlamydomonas reinhardtii: A Site-Specific
+    Intestinal Release Platform Triggered by Enteropeptidase
 ---
 
-Gabriela develops *Chlamydomonas reinhardtii* as a cell-surface-display platform
-for controlled delivery and targeting of intestinal M cells. Her research
-investigates the CKS9 peptide in oral-vaccine models integrated with genetic
-circuits and acid-tolerant biosensors.
+Gabriela builds a cell-wall-anchored release platform in *Chlamydomonas
+reinhardtii*, in which an enteropeptidase-cleavable linker is meant to free a
+model protein cargo at the intestinal site after simulated gastric digestion.

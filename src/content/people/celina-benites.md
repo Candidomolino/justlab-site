@@ -11,12 +11,12 @@ links:
   lattes: https://lattes.cnpq.br/7349311118431088
 project:
   title: >-
-    Microalgal Cell-Surface Display of the Helminth-Derived TGF-β Mimic TGM1 for
-    Intestinal Immune Modulation in IBS (working title)
+    Expression of Hp-TGM1 in Chlamydomonas reinhardtii: Cytosolic Retention versus
+    Cell-Wall Anchoring as a Platform Strategy for Oral Delivery of Therapeutic
+    Proteins
 ---
 
-Celina investigates the cell-surface display of TGF-β mimic 1 (TGM1), an
-immunomodulatory protein secreted by the intestinal helminth *Heligmosomoides
-polygyrus*. Her research explores microalgae as a platform for localized
-presentation of TGM1 and its potential application in an IBS-directed intestinal
-therapeutic strategy.
+Celina compares two *Chlamydomonas reinhardtii* strains expressing the
+helminth-derived TGF-β mimic Hp-TGM1, differing only in targeting — cytosolic
+retention versus cell-wall anchoring — to establish a design reference for
+oral protein-delivery platforms.

@@ -14,7 +14,7 @@ const { Content } = await render(project);
 
 const fmt = (s?: string) =>
   s
-    ? new Date(s).toLocaleDateString("en-GB", { month: "long", year: "numeric" })
+    ? new Date(s).toLocaleDateString("en-GB", { month: "long", year: "numeric", timeZone: "UTC" })
     : "";
 ---
 
@@ -23,12 +23,14 @@ const fmt = (s?: string) =>
     <p><a href={href("/projects")}>← All projects</a></p>
     {d.shortName && <span class="mono tag">{d.shortName}</span>}
     <h1>{d.title}</h1>
+    {d.titlePt && <p class="pt">Original title: <i>{d.titlePt}</i></p>}
 
     <dl class="facts">
-      <div><dt>Funder</dt><dd>{d.funder}</dd></div>
+      {d.researcher && <div><dt>Undergraduate researcher</dt><dd>{d.researcher}</dd></div>}
+      {d.funder && <div><dt>Funder</dt><dd>{d.funder}</dd></div>}
       {d.process && <div><dt>Process</dt><dd>{d.process}</dd></div>}
-      <div><dt>Period</dt><dd>{fmt(d.startDate)} – {fmt(d.endDate)}</dd></div>
-      <div><dt>Principal investigator</dt><dd>{d.pi}</dd></div>
+      <div><dt>Period</dt><dd>{fmt(d.startDate)}{d.endDate ? ` – ${fmt(d.endDate)}` : " – present"}</dd></div>
+      <div><dt>{d.researcher ? "Supervisor" : "Principal investigator"}</dt><dd>{d.pi}</dd></div>
       {d.host && <div><dt>Host institution</dt><dd>{d.host}</dd></div>}
       {
         d.collaborators.length > 0 && (
@@ -56,6 +58,12 @@ const fmt = (s?: string) =>
   h1 {
     font-size: clamp(1.7rem, 4vw, 2.6rem);
     max-width: 26ch;
+  }
+  .pt {
+    color: var(--ink-faint);
+    font-size: 0.88rem;
+    margin-top: 0.8rem;
+    max-width: 70ch;
   }
   .facts {
     display: grid;

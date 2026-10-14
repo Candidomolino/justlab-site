@@ -76,8 +76,15 @@ const projects = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./src/content/projects" }),
   schema: z.object({
     title: z.string(),
+    titlePt: str(),
     shortName: str(),
-    funder: z.string(),
+    order: z.number().nullish().transform((v) => v ?? 99),
+    kind: z
+      .enum(["funded", "undergraduate"])
+      .nullish()
+      .transform((v) => v ?? "funded"),
+    researcher: str(),
+    funder: str(),
     process: str(),
     startDate: isoDate(),
     endDate: isoDate(),

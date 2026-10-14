@@ -1,90 +1,130 @@
 ---
-import { getCollection } from "astro:content";
+import { getCollection, render } from "astro:content";
 import Base from "../../layouts/Base.astro";
 import SectionHead from "../../components/SectionHead.astro";
 import { href } from "../../lib/url";
 
 const projects = (await getCollection("projects")).sort(
   (a, b) =>
+    a.data.order - b.data.order ||
     +new Date(b.data.startDate ?? 0) - +new Date(a.data.startDate ?? 0),
 );
-const active = projects.filter((p) => p.data.status === "active");
-const done = projects.filter((p) => p.data.status === "completed");
+const withBody = await Promise.all(
+  projects.map(async (p) => ({ p, Content: (await render(p)).Content })),
+);
+const groups = [
+  {
+    id: "funded",
+    title: "Funded research",
+    items: withBody.filter((x) => x.p.data.kind === "funded"),
+  },
+  {
+    id: "undergraduate",
+    title: "Undergraduate research projects",
+    items: withBody.filter((x) => x.p.data.kind === "undergraduate"),
+  },
+];
 
 const fmt = (d?: string) =>
   d
-    ? new Date(d).toLocaleDateString("en-GB", { month: "short", year: "numeric" })
+    ? new Date(d).toLocaleDateString("en-GB", { month: "short", year: "numeric", timeZone: "UTC" })
     : "";
 ---
 
-<Base title="Projects" description="Funded research projects at the JUST Lab.">
-  <section class="wrap">
+<Base title="Projects" description="Funded and student-led research projects at the JUST Lab.">
+  <section class="wrap head">
     <SectionHead
       kicker="Projects"
-      title="Funded research"
-      lead="Grant-funded projects, each tagged to a research area."
+      title="Research projects"
+      lead="Grant-funded and student-led projects of the JUST Lab."
     />
   </section>
 
-  <section class="wrap grid-wrap">
-    <div class="grid">
-      {
-        active.map((p) => (
-          <a class="proj" href={href(`/projects/${p.id}`)}>
-            {p.data.shortName && <span class="mono tag">{p.data.shortName}</span>}
-            <h3>{p.data.title}</h3>
-            <p class="meta">
-              {p.data.funder}
-              {p.data.process ? ` · ${p.data.process}` : ""} · {fmt(p.data.startDate)}
-              {p.data.endDate ? ` – ${fmt(p.data.endDate)}` : ""}
-            </p>
-            <p class="pi">PI: {p.data.pi}</p>
-          </a>
-        ))
-      }
-    </div>
-
-    {
-      done.length > 0 && (
-        <>
-          <h2 class="done-h">Completed</h2>
-          <ul class="done">
-            {done.map((p) => (
-              <li>
-                <a href={href(`/projects/${p.id}`)}>{p.data.title}</a>
-                <span class="mono">
-                  {fmt(p.data.startDate)} – {fmt(p.data.endDate)}
-                </span>
-              </li>
-            ))}
-          </ul>
-        </>
-      )
-    }
-  </section>
+  {
+    groups.map(
+      (g) =>
+        g.items.length > 0 && (
+          <section class="wrap grp">
+            <h2 class="grp-h">{g.title}</h2>
+            <div class="rows">
+              {g.items.map(({ p, Content }) => (
+                <div class="row">
+                  <a class="proj" href={href(`/projects/${p.id}`)}>
+                    {p.data.shortName && (
+                      <span class="mono tag">{p.data.shortName}</span>
+                    )}
+                    <h3>{p.data.title}</h3>
+                    <p class="meta">
+                      {p.data.funder
+                        ? `${p.data.funder}${p.data.process ? ` · ${p.data.process}` : ""} · `
+                        : ""}
+                      {fmt(p.data.startDate)}
+                      {p.data.endDate ? ` – ${fmt(p.data.endDate)}` : " – present"}
+                    </p>
+                    <p class="pi">
+                      {p.data.researcher
+                        ? `${p.data.researcher} · Supervisor: ${p.data.pi}`
+                        : `PI: ${p.data.pi}`}
+                    </p>
+                  </a>
+                  <div class="desc">
+                    <span class="mono tag">About the project</span>
+                    <div class="prose">
+                      <Content />
+                    </div>
+                    <a class="more" href={href(`/projects/${p.id}`)}>
+                      Project details →
+                    </a>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+        ),
+    )
+  }
 </Base>
 
 <style>
-  .grid {
+  .head {
+    padding-bottom: 1.5rem;
+  }
+  .grp {
+    padding-block: 1.5rem clamp(1.5rem, 4vw, 2.5rem);
+  }
+  .grp-h {
+    font-size: 1.25rem;
+    margin-bottom: 1.2rem;
+  }
+  .rows {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 1.2rem;
   }
-  .proj {
+  .row {
+    display: grid;
+    grid-template-columns: minmax(260px, 340px) 1fr;
+    gap: 1.2rem;
+    align-items: stretch;
+  }
+  .proj,
+  .desc {
     background: var(--surface);
     border: 1px solid var(--line);
     border-radius: var(--radius);
     padding: 1.6rem;
-    text-decoration: none;
-    color: inherit;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+  }
+  .proj {
+    text-decoration: none;
+    color: inherit;
     transition:
       transform 0.2s var(--ease),
       border-color 0.2s;
   }
-  .proj:hover {
+  .proj:hover,
+  .proj:focus-visible {
     transform: translateY(-3px);
     border-color: var(--accent);
   }
@@ -105,24 +145,23 @@ const fmt = (d?: string) =>
     font-size: 0.85rem;
     margin: 0;
   }
-  .done-h {
-    margin: 3rem 0 1rem;
-    font-size: 1.2rem;
-  }
-  .done {
-    list-style: none;
-    padding: 0;
+  .desc :global(p) {
+    color: var(--ink-soft);
+    font-size: 0.93rem;
+    line-height: 1.65;
     margin: 0;
   }
-  .done li {
-    display: flex;
-    justify-content: space-between;
-    gap: 1rem;
-    padding: 0.8rem 0;
-    border-bottom: 1px solid var(--line);
+  .desc .prose {
+    max-width: none;
   }
-  .done .mono {
-    color: var(--ink-faint);
-    flex: none;
+  .more {
+    margin-top: auto;
+    padding-top: 0.6rem;
+    font-size: 0.9rem;
+  }
+  @media (max-width: 800px) {
+    .row {
+      grid-template-columns: 1fr;
+    }
   }
 </style>
