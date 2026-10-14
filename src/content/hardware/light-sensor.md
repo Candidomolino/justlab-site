@@ -3,6 +3,7 @@ name: Light_sensor
 title: Transmittance densitometer for biomass
 summary: A printed clamshell that clamps around the reactor tube and reads biomass with 850 nm infrared — no opening, no sampling.
 group: control
+areas: [bioprocess]
 stage: design-closed
 scale: Inline, on the reactor tube
 order: 5

@@ -4,11 +4,16 @@ import Base from "../layouts/Base.astro";
 import SectionHead from "../components/SectionHead.astro";
 import AreaIcon from "../components/AreaIcon.astro";
 import { site, publications } from "../lib/data";
+import { href } from "../lib/url";
+import { stageLabel } from "../lib/hardware";
 
 const areas = (await getCollection("research")).sort(
   (a, b) => a.data.order - b.data.order,
 );
 const people = await getCollection("people");
+const hardware = (await getCollection("hardware")).sort(
+  (a, b) => a.data.order - b.data.order,
+);
 const rendered = await Promise.all(
   areas.map(async (a) => ({ area: a, Content: (await render(a)).Content })),
 );
@@ -30,6 +35,7 @@ const rendered = await Promise.all(
       const papers = publications.filter((p) =>
         (p.areas ?? []).includes(d.slug),
       );
+      const hw = hardware.filter((h) => h.data.areas.includes(d.slug));
       return (
         <section class="wrap area" id={d.slug}>
           <div class="area-head">
@@ -50,6 +56,27 @@ const rendered = await Promise.all(
                 </>
               ))}
             </p>
+          )}
+          {hw.length > 0 && (
+            <div class="hw">
+              <h3>
+                Open hardware
+                <a class="all" href={href("/resources/hardware/")}>
+                  All projects →
+                </a>
+              </h3>
+              <ul>
+                {hw.map((h) => (
+                  <li>
+                    <a href={href(`/resources/hardware/${h.id}/`)}>
+                      <b>{h.data.name}</b>
+                    </a>
+                    <span class="what">{h.data.summary}</span>
+                    <span class="stage mono">{stageLabel[h.data.stage]}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           )}
           {papers.length > 0 && (
             <ul class="papers">
@@ -113,6 +140,53 @@ const rendered = await Promise.all(
   .line .mono {
     color: var(--accent);
     margin-right: 0.4rem;
+  }
+  .hw {
+    margin-top: 1.6rem;
+  }
+  .hw h3 {
+    font-size: 1rem;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.6rem;
+  }
+  .hw .all {
+    font-size: 0.85rem;
+    font-weight: 400;
+  }
+  .hw ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-top: 1px solid var(--line);
+  }
+  .hw li {
+    display: grid;
+    grid-template-columns: 7.5rem 1fr;
+    gap: 0.2rem 1.2rem;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 0.92rem;
+  }
+  .hw .what {
+    color: var(--ink-soft);
+  }
+  .hw .stage {
+    grid-column: 2;
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  @media (max-width: 560px) {
+    .hw li {
+      grid-template-columns: 1fr;
+    }
+    .hw .stage {
+      grid-column: 1;
+    }
   }
   .papers {
     list-style: none;

@@ -109,6 +109,7 @@ const hardware = defineCollection({
     title: z.string(),
     summary: z.string(),
     group: z.enum(["reactor", "control", "instrument"]),
+    areas: strArr(),
     stage: z.enum([
       "in-use",
       "operating",

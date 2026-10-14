@@ -3,6 +3,7 @@ name: BULBO
 title: Reactor-agnostic monitoring module
 summary: A closed-loop module beside the reactor that watches what a microalgal culture is doing — pH, temperature, conductivity, density — without ever opening it.
 group: control
+areas: [bioprocess]
 stage: future
 scale: From a 100 mL flask to a 100 L bag
 cost: Target about R$ 2,000 (instead of tens of thousands)

@@ -3,6 +3,7 @@ name: SANDY
 title: Hanging-bag photobioreactor, 1–2 L
 summary: The smallest and easiest to reproduce of the three reactors — a disposable HDPE bag on a printed ring, run clean but not axenic.
 group: reactor
+areas: [bioprocess]
 stage: operating
 scale: 1–2 L working volume
 order: 1

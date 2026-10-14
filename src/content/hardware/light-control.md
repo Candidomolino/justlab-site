@@ -3,6 +3,7 @@ name: Light_control
 title: ESP32 photoperiod and intensity controller
 summary: One light controller for all three reactors. The firmware holds no experiment — it runs JSON "recipes" swapped over Wi-Fi.
 group: control
+areas: [bioprocess]
 stage: bench
 scale: Shared by SANDY, OCTinho and OCTO
 order: 4

@@ -3,10 +3,11 @@ name: SACI
 title: Open Printed Centrifugation System
 summary: A 3D-printed benchtop microcentrifuge for six microtubes — R$ 77 in materials against R$ 5,500 for the commercial reference unit.
 group: instrument
+areas: [bioprocess]
 stage: in-use
 scale: Benchtop · six 1.5–2.0 mL tubes
 cost: "R$ 77 in materials (commercial reference: R$ 5,500)"
-order: 1
+order: 7
 hero: saci-01-tampa-logo.jpg
 license: CERN-OHL-S-2.0 (hardware) · CC-BY-4.0 (documentation and data)
 files: A v0.1 release is being prepared (design note, dimensioned drawings, CAD, parametric parts, clarification and miniprep data, scripts). It is not yet public and has no DOI.

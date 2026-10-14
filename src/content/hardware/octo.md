@@ -3,6 +3,7 @@ name: OCTO
 title: 20 L bubble-column photobioreactor
 summary: A nominal 20 L glass carboy inside an octagonal printed cage, lit from eight directions and mixed by air alone.
 group: reactor
+areas: [bioprocess]
 stage: operating
 scale: Nominal 20 L
 cost:

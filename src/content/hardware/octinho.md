@@ -3,6 +3,7 @@ name: OCTinho
 title: 10 L flask photobioreactor
 summary: The OCTO architecture adapted to a 10 L borosilicate flask, with a lid designed for five pass-throughs. Only the flask exists so far.
 group: reactor
+areas: [bioprocess]
 stage: preliminary
 scale: Nominal 10 L
 order: 2
