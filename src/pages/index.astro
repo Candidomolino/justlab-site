@@ -14,11 +14,16 @@ const research = (await getCollection("research")).sort(
 const news = (await getCollection("news")).sort(
   (a, b) => +b.data.date - +a.data.date,
 );
-const people = (await getCollection("people")).filter((p) =>
-  ["pi", "collaborator", "undergrad", "grad", "researcher"].includes(
-    p.data.category,
-  ),
-);
+const allPeople = await getCollection("people");
+const rank: Record<string, number> = { pi: 0, researcher: 1, grad: 2, undergrad: 3 };
+const byOrder = (a: (typeof allPeople)[number], b: (typeof allPeople)[number]) =>
+  a.data.order - b.data.order;
+const people = allPeople
+  .filter((p) => p.data.category in rank)
+  .sort((a, b) => rank[a.data.category] - rank[b.data.category] || byOrder(a, b));
+const collaborators = allPeople
+  .filter((p) => p.data.category === "collaborator")
+  .sort(byOrder);
 const featured = publications.filter((p) => p.featured).slice(0, 4);
 const spotlight = featured[0];
 ---
@@ -134,6 +139,18 @@ const spotlight = featured[0];
     <div class="people-strip">
       {people.map((p) => <PersonCard person={p} compact={true} />)}
     </div>
+    {
+      collaborators.length > 0 && (
+        <>
+          <h3 class="people-sub">Collaborators</h3>
+          <div class="people-strip">
+            {collaborators.map((p) => (
+              <PersonCard person={p} compact={true} />
+            ))}
+          </div>
+        </>
+      )
+    }
     <p><a href={href("/people")}>Everyone, including former trainees →</a></p>
   </section>
 
@@ -152,6 +169,10 @@ const spotlight = featured[0];
 </Base>
 
 <style>
+  .people-sub {
+    font-size: 1.05rem;
+    margin: 2.2rem 0 1rem;
+  }
   .phototaxis {
     display: grid;
     grid-template-columns: 1.1fr 1fr;

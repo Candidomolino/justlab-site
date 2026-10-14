@@ -52,28 +52,6 @@ const bios = new Map(
   </section>
 
   {
-    collaborators.length > 0 && (
-      <section class="wrap grp">
-        <h2 class="grp-h">Collaborators</h2>
-        <div class="grid">
-          {collaborators.map((p) => {
-            const Bio = bios.get(p.id);
-            return (
-              <PersonCard person={p}>
-                {Bio && (
-                  <div class="bio">
-                    <Bio />
-                  </div>
-                )}
-              </PersonCard>
-            );
-          })}
-        </div>
-      </section>
-    )
-  }
-
-  {
     undergrads.length > 0 && (
       <section class="wrap grp">
         <h2 class="grp-h">Undergraduate researchers</h2>
@@ -103,6 +81,28 @@ const bios = new Map(
           {[...researchers, ...grads, ...staff].map((p) => (
             <PersonCard person={p} />
           ))}
+        </div>
+      </section>
+    )
+  }
+
+  {
+    collaborators.length > 0 && (
+      <section class="wrap grp">
+        <h2 class="grp-h">Collaborators</h2>
+        <div class="grid">
+          {collaborators.map((p) => {
+            const Bio = bios.get(p.id);
+            return (
+              <PersonCard person={p}>
+                {Bio && (
+                  <div class="bio">
+                    <Bio />
+                  </div>
+                )}
+              </PersonCard>
+            );
+          })}
         </div>
       </section>
     )
