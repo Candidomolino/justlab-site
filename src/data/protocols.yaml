@@ -1,0 +1,69 @@
+# Lab protocols, hosted on protocols.io (latest published version of each).
+#
+# To add one: give Claude the protocols.io link ("add protocol <url> under
+# Cultivation"), or copy an entry below. Groups render in the order listed here.
+
+- group: Cultivation and growth
+  items:
+    - title: Culturing Chlamydomonas reinhardtii
+      url: https://www.protocols.io/view/culturing-chlamydomonas-reinhardtii-bkrskv6e
+      year: 2020
+    - title: Growth curve for Chlamydomonas reinhardtii
+      url: https://www.protocols.io/view/growth-curve-for-chlamydomonas-reinhardtii-bpvbmn2n
+      year: 2020
+    - title: Dry cell weight by centrifugation
+      url: https://www.protocols.io/view/dry-cell-weight-by-centrifugation-bkrbkv2n
+      year: 2020
+
+- group: Genetic transformation and molecular analysis
+  items:
+    - title: Chlamydomonas reinhardtii nuclear transformation by electroporation
+      url: https://www.protocols.io/view/chlamydomonas-reinhardtii-nuclear-transformation-b-bx5cpq2w
+      year: 2021
+      version: v3
+    - title: High GC-content PCR
+      url: https://www.protocols.io/view/high-gc-content-pcr-bprimm4e
+      year: 2020
+    - title: Western blotting in Chlamydomonas reinhardtii
+      url: https://www.protocols.io/view/western-blotting-in-chlamydomonas-reinhardtii-b7fdrji6
+      year: 2022
+      version: v2
+    - title: 2A cleaving efficiency protocol
+      url: https://www.protocols.io/view/2a-cleaving-efficiency-protocol-b3t8qnrw
+      year: 2022
+    - title: Position effect on secretion efficiency
+      url: https://www.protocols.io/view/position-effect-on-secretion-efficiency-b3t9qnr6
+      year: 2022
+    - title: Protein secretion efficiency of construct in Chlamydomonas reinhardtii
+      url: https://www.protocols.io/view/protein-secretion-efficiency-of-construct-in-chlam-kfnctme
+      year: 2017
+
+- group: Screening and microscopy
+  items:
+    - title: Fluorescent mutants screening in 96 well plates - Chlamydomonas reinhardtii
+      url: https://www.protocols.io/view/fluorescent-mutants-screening-in-96-well-plates-ch-big9kbz6
+      year: 2020
+    - title: Fluorescence microscopy of Chlamydomonas reinhardtii - mCherry | Chlorophyll
+      url: https://www.protocols.io/view/fluorescence-microscopy-of-chlamydomonas-reinhardt-kfrctm6
+      year: 2017
+    - title: Agarose pads for microscopy
+      url: https://www.protocols.io/view/agarose-pads-for-microscopy-bkn8kvhw
+      year: 2020
+    - title: Chlamydomonas reinhardtii cell motility quantification
+      url: https://www.protocols.io/view/chlamydomonas-reinhardtii-cell-motility-quantifica-bsw5nfg6
+      year: 2021
+
+- group: Plastic-degrading enzyme assays
+  items:
+    - title: Assay for the enzymatic degradation of PET beads
+      url: https://www.protocols.io/view/assay-for-the-enzymatic-degradation-of-pet-beads-c5byy2pw
+      year: 2023
+    - title: Fluorescein diacetate assay - for plastic degrading enzymes in algae
+      url: https://www.protocols.io/view/fluorescein-diacetate-assay-for-plastic-degrading-c5bpy2mn
+      year: 2023
+    - title: Impranil activity assay for plastic degrading enzymes
+      url: https://www.protocols.io/view/impranil-activity-assay-for-plastic-degrading-enzy-dqab5san
+      year: 2024
+    - title: TAP 0.5%-0.75% impranil agarose plates
+      url: https://www.protocols.io/view/tap-0-5-0-75-impranil-agarose-plates-ck7iuzke
+      year: 2023

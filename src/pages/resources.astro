@@ -4,6 +4,9 @@ import Base from "../layouts/Base.astro";
 import SectionHead from "../components/SectionHead.astro";
 import HardwareCard from "../components/HardwareCard.astro";
 import { href } from "../lib/url";
+import { protocols } from "../lib/data";
+
+const protocolCount = protocols.reduce((n, g) => n + g.items.length, 0);
 
 const hardware = (await getCollection("hardware")).sort(
   (a, b) => a.data.order - b.data.order,
@@ -37,14 +40,14 @@ const hardware = (await getCollection("hardware")).sort(
 
   <section class="wrap">
     <div class="grid">
-      <div class="card">
+      <a class="card link" href={href("/resources/protocols/")}>
         <h3>Protocols</h3>
         <p>
-          Step-by-step methods for transformation, screening, cultivation, and
-          downstream processing — each linked to a document or protocols.io entry.
+          Step-by-step methods for culturing, transformation, screening, and
+          plastic-degrading enzyme assays — {protocolCount} published on protocols.io.
         </p>
-        <p class="mono todo">TODO: add protocol links</p>
-      </div>
+        <span class="go">Browse protocols →</span>
+      </a>
       <div class="card">
         <h3>Datasets</h3>
         <p>Published datasets with repository links (Zenodo, OSF).</p>
@@ -97,6 +100,23 @@ const hardware = (await getCollection("hardware")).sort(
   .card p {
     color: var(--ink-soft);
     font-size: 0.92rem;
+  }
+  .card.link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    transition:
+      transform 0.2s var(--ease),
+      border-color 0.2s;
+  }
+  .card.link:hover,
+  .card.link:focus-visible {
+    transform: translateY(-3px);
+    border-color: var(--accent);
+  }
+  .go {
+    color: var(--accent);
+    font-size: 0.9rem;
   }
   .todo {
     color: var(--gold);

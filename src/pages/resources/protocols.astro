@@ -1,0 +1,91 @@
+---
+import Base from "../../layouts/Base.astro";
+import SectionHead from "../../components/SectionHead.astro";
+import { protocols } from "../../lib/data";
+import { href } from "../../lib/url";
+
+const total = protocols.reduce((n, g) => n + g.items.length, 0);
+---
+
+<Base
+  title="Protocols"
+  description="Open, step-by-step lab protocols from the JUST Lab, published on protocols.io."
+>
+  <section class="wrap head">
+    <p><a href={href("/resources")}>← Resources</a></p>
+    <SectionHead
+      kicker="Protocols"
+      title="Step-by-step methods, openly published"
+      lead={`${total} protocols for culturing, transforming and screening Chlamydomonas and for plastic-degrading enzyme assays. Each opens on protocols.io, where it can be cited, commented on and forked.`}
+    />
+  </section>
+
+  {
+    protocols.map((g) => (
+      <section class="wrap grp">
+        <h2>{g.group}</h2>
+        <ul>
+          {g.items.map((p) => (
+            <li>
+              <a href={p.url} rel="noopener">
+                {p.title}
+                <span aria-hidden="true"> ↗</span>
+              </a>
+              <span class="meta mono">
+                {p.version ? `${p.version} · ` : ""}
+                {p.year}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))
+  }
+
+  <section class="wrap note">
+    <p class="mono">
+      Protocols are hosted on protocols.io. More are being added as they are
+      published.
+    </p>
+  </section>
+</Base>
+
+<style>
+  .head {
+    padding-bottom: 1.5rem;
+  }
+  .grp {
+    padding-block: 1.5rem;
+  }
+  .grp h2 {
+    font-size: 1.25rem;
+    margin-bottom: 0.8rem;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-top: 1px solid var(--line);
+  }
+  li {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    padding: 0.85rem 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 0.97rem;
+  }
+  .meta {
+    color: var(--ink-faint);
+    font-size: 0.66rem;
+    flex: none;
+  }
+  .note {
+    padding-block: 1.5rem 3rem;
+  }
+  .note p {
+    color: var(--ink-faint);
+    font-size: 0.72rem;
+  }
+</style>

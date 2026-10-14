@@ -3,6 +3,7 @@
 import siteRaw from "../data/site.yaml";
 import publicationsRaw from "../data/publications.yaml";
 import alumniRaw from "../data/alumni.yaml";
+import protocolsRaw from "../data/protocols.yaml";
 
 export interface NavItem {
   label: string;
@@ -44,6 +45,17 @@ export interface Publication {
   highlight?: string;
 }
 
+export interface Protocol {
+  title: string;
+  url: string;
+  year?: number;
+  version?: string;
+}
+export interface ProtocolGroup {
+  group: string;
+  items: Protocol[];
+}
+
 export interface AlumnusUG {
   name: string;
   institution: string;
@@ -60,3 +72,4 @@ export interface AlumniData {
 export const site = siteRaw as SiteData;
 export const publications = publicationsRaw as Publication[];
 export const alumni = alumniRaw as AlumniData;
+export const protocols = protocolsRaw as ProtocolGroup[];
