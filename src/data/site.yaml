@@ -42,7 +42,7 @@ affiliations:
 # Lab-wide profiles. Fill in as they exist.
 socials:
   github: https://github.com/molino-algae
-  scholar: "" # TODO: lab Google Scholar profile URL — drives the full publications list
+  scholar: "https://scholar.google.com/citations?user=kLsTv9IAAAAJ&hl=en" # PI profile (João Molino); swap for a lab-level profile if one is created
   orcid: ""
   bluesky: ""
   linkedin: ""
