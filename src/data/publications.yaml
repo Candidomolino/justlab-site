@@ -1,7 +1,8 @@
 # Publications.
 #
-# The COMPLETE list lives on the lab's Google Scholar profile (set socials.scholar
-# in site.yaml). This file holds the entries we want to feature on the site.
+# Peer-reviewed papers and unpublished preprints (imported from ORCID + Crossref).
+# Protocols.io entries and bioRxiv versions of already-published papers are left
+# out. The complete list also lives on Google Scholar (socials.scholar in site.yaml).
 #
 # To add a paper: give Claude the DOI ("add DOI 10.xxxx/xxxx, featured") and it
 # fills in the fields from Crossref, or copy an entry below and edit it.
@@ -108,3 +109,245 @@
     were tested experimentally — four previously reported and six new candidates.
     Two newly identified sequences produced the highest heterologous-protein
     secretion, expanding the molecular toolkit for microalgal biomanufacturing.
+
+# --- More publications (not featured) ---
+
+- doi: 10.1016/j.algal.2025.104192
+  title: "Identification and overexpression of endogenous transcription factors to enhance lipid accumulation in the biotechnologically relevant species Chlamydomonas pacifica"
+  authors: "Gupta A, Oliver A, Molino JVD, Wnuk-Fink KMJ, Tessman M, Kang K, do Espirito Santo É, Torres-Tiji Y, Burkart MD, Mayfield S"
+  venue: "Algal Research"
+  year: 2025
+  volume: "90"
+  pages: "104192"
+  type: article
+  areas: [genetic-engineering, biorefineries]
+
+- doi: 10.1038/s41598-025-09100-0
+  title: "Efficient secretion of a plastic degrading enzyme from the green algae Chlamydomonas reinhardtii"
+  authors: "Dutra Molino JV, Saucedo B, Kang K, Walsh C, Diaz CJ, Tessman M, Simkovsky R, Mayfield S"
+  venue: "Scientific Reports"
+  year: 2025
+  volume: "15(1)"
+  pages: "24690"
+  type: article
+  areas: [recombinant-proteins, genetic-engineering]
+
+- doi: 10.1371/journal.pone.0321071
+  title: "Engineering the green algae Chlamydomonas incerta for recombinant protein production"
+  authors: "Kang K, Santo ÉDE, Diaz CJ, Oliver A, Saxton L, May L, Mayfield S, Molino JVD"
+  venue: "PLOS ONE"
+  year: 2025
+  volume: "20(4)"
+  pages: "e0321071"
+  type: article
+  areas: [genetic-engineering, recombinant-proteins]
+
+- doi: 10.1101/2025.05.14.654053
+  title: "Sustainable production of plastic-degrading enzymes in Chlamydomonas pacifica"
+  authors: "Diaz CJ, Dutra Molino JV, Saucedo B, Kang K, do Espirito Santo É, Tessman M, Gupta A, Burkart MD, Simkovsky R, Mayfield S"
+  venue: "bioRxiv"
+  year: 2025
+  type: preprint
+  areas: [recombinant-proteins, biorefineries]
+
+- doi: 10.1101/2025.05.12.653396
+  title: "Low-Cost Screening of Algae for Extreme Tolerance to pH, Temperature, Salinity, and Light"
+  authors: "Saucedo B, Kang K, May L, Gupta A, do Espirito Santo É, Mayfield S, Dutra Molino JV"
+  venue: "bioRxiv"
+  year: 2025
+  type: preprint
+  areas: [biorefineries, bioprocess]
+
+- doi: 10.1101/2025.01.23.634604
+  title: "Engineering microalgal cell wall-anchored proteins using GP1 PPSPX motifs and releasing with intein-mediated fusion"
+  authors: "Kang K, do Espirito Santo É, Diaz CJ, Mayfield S, Dutra Molino JV"
+  venue: "bioRxiv"
+  year: 2025
+  type: preprint
+  areas: [genetic-engineering, recombinant-proteins]
+
+- doi: 10.1002/ceat.202300143
+  title: "Effect of Macronutrients on Recombinant mCherry Production by Microalga"
+  authors: "Arias CAD, Matsudo MC, Ferreira‐Camargo LS, Molino JVD, Mayfield SP, de Carvalho JCM"
+  venue: "Chemical Engineering & Technology"
+  year: 2024
+  volume: "47(12)"
+  pages: "e202300143"
+  type: article
+  areas: [bioprocess, recombinant-proteins]
+
+- doi: 10.3389/fbioe.2024.1350722
+  title: "Harnessing genetic engineering to drive economic bioproduct production in algae"
+  authors: "Gupta A, Kang K, Pathania R, Saxton L, Saucedo B, Malik A, Torres-Tiji Y, Diaz CJ, Dutra Molino JV, Mayfield SP"
+  venue: "Frontiers in Bioengineering and Biotechnology"
+  year: 2024
+  volume: "12"
+  pages: "1350722"
+  type: review
+  areas: [genetic-engineering, biorefineries]
+
+- doi: 10.3389/fnut.2022.1029841
+  title: "Developing algae as a sustainable food source"
+  authors: "Diaz CJ, Douglas KJ, Kang K, Kolarik AL, Malinovski R, Torres-Tiji Y, Molino JV, Badary A, Mayfield SP"
+  venue: "Frontiers in Nutrition"
+  year: 2023
+  volume: "9"
+  pages: "1029841"
+  type: review
+  areas: [biorefineries]
+
+- doi: 10.3390/ijpb14010004
+  title: "Production of Recombinant Biopharmaceuticals in Chlamydomonas reinhardtii"
+  authors: "Arias CAD, Oliveira CFMD, Molino JVD, Ferreira-Camargo LS, Matsudo MC, Carvalho JCMD"
+  venue: "International Journal of Plant Biology"
+  year: 2022
+  volume: "14(1)"
+  pages: "39-52"
+  type: review
+  areas: [recombinant-proteins]
+
+- doi: 10.1016/j.msec.2021.112623
+  title: "Doxorubicin nanoformulations on therapy against cancer: An overview from the last 10 years"
+  authors: "D'Angelo NA, Noronha MA, Câmara MCC, Kurnik IS, Feng C, Araujo VHS, Santos JHPM, Feitosa V, Molino JVD, Rangel-Yagui CO, Chorilli M, Ho EA, Lopes AM"
+  venue: "Biomaterials Advances"
+  year: 2022
+  volume: "133"
+  pages: "112623"
+  type: review
+
+- doi: 10.1016/j.foodres.2020.109944
+  title: "Antarctic fungus proteases generate bioactive peptides from caseinate"
+  authors: "Nascimento TCES, Molino JVD, Donado PRS, Montalvo GSA, dos Santos WL, Gomes JEG, Santos JHPM, da Silva R, Sette LD, Pessoa Junior A, Moreira KA"
+  venue: "Food Research International"
+  year: 2021
+  volume: "139"
+  pages: "109944"
+  type: article
+
+- doi: 10.1016/j.actbio.2021.09.048
+  title: "Biohybrid microswimmers against bacterial infections"
+  authors: "Shchelik IS, Molino JVD, Gademann K"
+  venue: "Acta Biomaterialia"
+  year: 2021
+  volume: "136"
+  pages: "99-110"
+  type: article
+
+- doi: 10.1002/btpr.3101
+  title: "Semicontinuous system for the production of recombinant mCherry protein in Chlamydomonas reinhardtii"
+  authors: "Arias CAD, Matsudo MC, Ferreira‐Camargo LS, Molino JVD, Mayfield SP, de Carvalho JCM"
+  venue: "Biotechnology Progress"
+  year: 2021
+  volume: "37(2)"
+  pages: "e3101"
+  type: article
+  areas: [bioprocess, recombinant-proteins]
+
+- doi: 10.1016/j.seppur.2018.07.078
+  title: "Effect of electrolytes as adjuvants in GFP and LPS partitioning on aqueous two-phase systems: 2. Nonionic micellar systems"
+  authors: "Teixeira-Pinto RGR, Molino JVD, Santos-Ebinuma VC, Pessoa A, Valentini SR, Pereira JFB, Lopes AM"
+  venue: "Separation and Purification Technology"
+  year: 2019
+  volume: "210"
+  pages: "69-79"
+  type: article
+  areas: [bioprocess]
+
+- doi: 10.1007/s11033-019-04785-9
+  title: "Influence of carbon source on cell size and production of anti LDL (-) single-chain variable fragment by a recombinant Pichia pastoris strain"
+  authors: "Diaz Arias CA, Molino JVD, de Araújo Viana Marques D, Queiroz Maranhão A, Abdalla Saes Parra D, Pessoa Junior A, Converti A"
+  venue: "Molecular Biology Reports"
+  year: 2019
+  volume: "46(3)"
+  pages: "3257-3264"
+  type: article
+  areas: [recombinant-proteins, bioprocess]
+
+- doi: 10.1002/bab.1627
+  title: "Application of aqueous two‐phase micellar system to improve extraction of adenoviral particles from cell lysate"
+  authors: "Molino JVD, Lopes AM, Viana Marques DDA, Mazzola PG, da Silva JL, Hirata MH, Hirata RDC, Gatti MSV, Pessoa A"
+  venue: "Biotechnology and Applied Biochemistry"
+  year: 2018
+  volume: "65(3)"
+  pages: "381-389"
+  type: article
+  areas: [bioprocess]
+
+- doi: 10.1016/j.seppur.2018.04.090
+  title: "Effect of electrolytes as adjuvants in GFP and LPS partitioning on aqueous two-phase systems: 1. Polymer-polymer systems"
+  authors: "Lopes AM, Molino JVD, dos Santos-Ebinuma VC, Pessoa A, Valentini SR, Pereira JFB"
+  venue: "Separation and Purification Technology"
+  year: 2018
+  volume: "206"
+  pages: "39-49"
+  type: article
+  areas: [bioprocess]
+
+- doi: 10.1016/j.algal.2018.02.018
+  title: "Evaluation of secretion reporters to microalgae biotechnology: Blue to red fluorescent proteins"
+  authors: "Molino JVD, de Carvalho JCM, Mayfield S"
+  venue: "Algal Research"
+  year: 2018
+  volume: "31"
+  pages: "252-261"
+  type: article
+  areas: [recombinant-proteins, genetic-engineering]
+
+- doi: 10.1002/btpr.2410
+  title: "Heterologous expression and purification of active L‐asparaginase I of Saccharomyces cerevisiae in Escherichia coli host"
+  authors: "Santos JHPM, Costa IM, Molino JVD, Leite MSM, Pimenta MV, Coutinho JAP, Pessoa A, Ventura SPM, Lopes AM, Monteiro G"
+  venue: "Biotechnology Progress"
+  year: 2017
+  volume: "33(2)"
+  pages: "416-424"
+  type: article
+  areas: [recombinant-proteins]
+
+- doi: 10.3897/rio.2.e9342
+  title: "Chimeric spider silk production in microalgae: a modular bionanomaterial"
+  authors: "Molino JV, Lubiana Alves T, Ferreira-Camargo L, Croce M, Tanaka A, Buson F, Ribeiro P, Campos-Salazar A, Antonio E, Maizel A, Siratuti V, Costa C, Wlodarczyk S, de Souza Lima R, Mello F, Mayfield S, Carvalho J"
+  venue: "Research Ideas and Outcomes"
+  year: 2016
+  volume: "2"
+  pages: "e9342"
+  type: article
+  areas: [genetic-engineering, recombinant-proteins]
+
+- doi: 10.1016/j.seppur.2015.10.001
+  title: "Liquid–liquid extraction of lipase produced by psychrotrophic yeast Leucosporidium scottii L117 using aqueous two-phase systems"
+  authors: "Duarte AWF, Lopes AM, Molino JVD, Pessoa A, Sette LD"
+  venue: "Separation and Purification Technology"
+  year: 2015
+  volume: "156"
+  pages: "215-225"
+  type: article
+  areas: [bioprocess]
+
+- doi: 10.1016/j.ejmech.2013.04.022
+  title: "Design, synthesis and biological evaluation of new aryl thiosemicarbazone as antichagasic candidates"
+  authors: "Blau L, Menegon RF, Trossini GHG, Molino JVD, Vital DG, Cicarelli RMB, Passerini GD, Bosquesi PL, Chin CM"
+  venue: "European Journal of Medicinal Chemistry"
+  year: 2013
+  volume: "67"
+  pages: "142-151"
+  type: article
+
+- doi: 10.1002/btpr.1792
+  title: "Different types of aqueous two‐phase systems for biomolecule and bioparticle extraction and purification"
+  authors: "Molino JVD, Viana Marques DDA, Júnior AP, Mazzola PG, Gatti MSV"
+  venue: "Biotechnology Progress"
+  year: 2013
+  volume: "29(6)"
+  pages: "1343-1353"
+  type: review
+  areas: [bioprocess]
+
+- doi: 10.1007/s00253-013-4922-x
+  title: "LPS–protein aggregation influences protein partitioning in aqueous two-phase micellar systems"
+  authors: "Lopes AM, Santos-Ebinuma VDC, Novaes LCDL, Molino JVD, Barbosa LRS, Pessoa A, Rangel-Yagui CDO"
+  venue: "Applied Microbiology and Biotechnology"
+  year: 2013
+  volume: "97(14)"
+  pages: "6201-6209"
+  type: article
+  areas: [bioprocess]
