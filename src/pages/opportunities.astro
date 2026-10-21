@@ -30,7 +30,7 @@ const emailLink = (subject: string) => `mailto:${r.email}?subject=${encodeURICom
           <div><dt>Online interviews</dt><dd>{r.interviewsLabel}<small>By invitation for shortlisted candidates</small></dd></div>
         </dl>
         <p class="funding-line"><strong>One MSc · One Doutorado Direto</strong><br />FAPESP Jovem Pesquisador<br />Process {r.grant}</p>
-        <p class="small"><strong>Flexible start: {r.startWindowLabel}.</strong> The date is negotiable according to the selected candidate’s availability, subject to PPGBI admission and fellowship activation.</p>
+        <p class="small"><strong>Expected starts:</strong> MSc — {r.mscStartLabel}; direct PhD — {r.ddStartLabel}. Dates follow the respective PPGBI admission arrangements and fellowship activation. <a href="#admission">See admission steps below.</a></p>
       </aside>
     </div>
     <nav class="page-links" aria-label="On this page">
@@ -139,8 +139,8 @@ const emailLink = (subject: string) => `mailto:${r.email}?subject=${encodeURICom
       <div>
         <h3>Selection by the lab</h3>
         <p>Applications will be assessed for motivation, scientific fit, relevant preparation and potential to develop. For the DD, we also consider experimental maturity and evidence of independence.</p>
-        <p>Shortlisted applicants will be invited to book an <strong>online interview for {r.interviewsLabel}</strong>, including a brief presentation in English. MSc applicants can discuss coursework, internships, technical or professional experience if they have not conducted formal research.</p>
-        <p>We aim to complete lab selection by the end of 2026. The start date is <strong>negotiable within {r.startWindowLabel}</strong> to accommodate the selected candidate’s availability and existing commitments, subject to PPGBI admission and fellowship activation.</p>
+        <p>Shortlisted applicants will be invited to book an <strong>online interview for {r.interviewsLabel}</strong>, including a brief presentation (in English for DD). MSc applicants can discuss coursework, internships, technical or professional experience if they have not conducted formal research.</p>
+        <p>We aim to complete lab selection by the end of 2026. Start arrangements differ between MSc and direct PhD and will be discussed at interview, subject to the respective PPGBI admission calendar and fellowship activation.</p>
       </div>
       <div>
         <h3>FAPESP support</h3>
@@ -153,8 +153,13 @@ const emailLink = (subject: string) => `mailto:${r.email}?subject=${encodeURICom
       <h3>Graduate admission through PPGBI</h3>
       <p>Both positions are linked to the <a href="https://sites.usp.br/ppgbi/">Programa de Pós-Graduação em Biotecnologia Industrial (PPGBI)</a> at EEL-USP.
         Selection by JUST Lab does not replace formal program admission or FAPESP fellowship activation.
-        Consult the <a href="https://cpg.eel.usp.br/apoio-administrativo/editais-de-selecao">official admissions notices</a>
-        and contact us early about the MSc or direct-PhD admission process. Program applications have their own deadlines; do not wait for the lab selection result to check what you need to submit.</p>
+        Program applications have their own deadlines; do not wait for the lab selection result to prepare your documents.</p>
+      <h4>Master’s: apply to the current admission process</h4>
+      <p>Applicants must also participate in <a href={r.mscAdmissionNoticeUrl}>Edital PPGBI 03/2026</a>, with a separate application to <a href="mailto:ppgbi@eel.usp.br">ppgbi@eel.usp.br</a> by <strong>{r.mscAdmissionDeadlineLabel}</strong>. The lab application does not register you for the program. Consult the notice for the full document checklist and selection procedure.</p>
+      <p><strong>Expected start: {r.mscStartLabel}</strong>, subject to the PPGBI admission calendar and fellowship activation.</p>
+      <h4>Direct PhD: forthcoming admission call</h4>
+      <p>The next rolling-admission call is expected in late November 2026. Follow the <a href="https://cpg.eel.usp.br/apoio-administrativo/editais-de-selecao">official admissions notices</a> for confirmation and the applicable DD procedure. This refers to graduate admission; the lab application deadline remains {r.closesLabel}.</p>
+      <p><strong>Expected start: {r.ddStartLabel}</strong>, with the date agreed according to the forthcoming PPGBI call and fellowship activation.</p>
       <p>Day-to-day communication can take place in Portuguese and/or English. Formal language-proficiency and enrollment requirements follow the graduate program’s rules.</p>
     </div>
     <p class="questions">Questions about fit or the application? <a href={`mailto:${r.email}`}>Contact João Vitor Dutra Molino</a>.</p>
