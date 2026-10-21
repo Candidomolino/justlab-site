@@ -9,7 +9,7 @@ export const recruitment = {
   cutoffLabel: "23:59 Brasília time (UTC−3)",
   interviewsLabel: "23–27 November 2026",
   mscStartLabel: "First semester of 2027",
-  ddStartLabel: "2027",
+  ddStartLabel: "From late 2026",
   mscAdmissionDeadlineLabel: "3 December 2026",
   mscAdmissionNoticeUrl: "https://cpg.eel.usp.br/sites/files/cpg/publico/Edital_de_Selecao_PPGBI_1o_sem_2027_-_Mestrado.pdf",
   email: "molino@usp.br",
