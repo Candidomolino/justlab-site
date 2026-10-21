@@ -6,7 +6,7 @@ const emailLink = (subject: string) => `mailto:${r.email}?subject=${encodeURICom
 ---
 <Base
   title="Funded MSc & direct PhD opportunities"
-  description="Join JUST Lab at EEL-USP in Lorena, Brazil. One FAPESP-funded MSc and one Doutorado Direto fellowship in microalgae biotechnology. Apply 19 October–19 November 2026."
+  description={`Join JUST Lab at EEL-USP in Lorena, Brazil. One FAPESP-funded MSc and one Doutorado Direto fellowship in microalgae biotechnology. Apply ${r.windowLabel}.`}
 >
   <section class="wrap intro" aria-labelledby="opportunities-title">
     <span class="kicker mono">Join JUST Lab · 2026</span>
@@ -27,9 +27,10 @@ const emailLink = (subject: string) => `mailto:${r.email}?subject=${encodeURICom
         <dl>
           <div><dt>Opens</dt><dd><time datetime={r.opens}>{r.opensLabel}</time></dd></div>
           <div><dt>Closes</dt><dd><time datetime={r.closes}>{r.closesLabel}</time><small>{r.cutoffLabel}</small></dd></div>
+          <div><dt>Online interviews</dt><dd>{r.interviewsLabel}<small>By invitation for shortlisted candidates</small></dd></div>
         </dl>
         <p class="funding-line"><strong>One MSc · One Doutorado Direto</strong><br />FAPESP Jovem Pesquisador<br />Process {r.grant}</p>
-        <p class="small">Start date to be agreed, subject to graduate admission and fellowship activation.</p>
+        <p class="small"><strong>Flexible start: {r.startWindowLabel}.</strong> The date is negotiable according to the selected candidate’s availability, subject to PPGBI admission and fellowship activation.</p>
       </aside>
     </div>
     <nav class="page-links" aria-label="On this page">
@@ -102,16 +103,15 @@ const emailLink = (subject: string) => `mailto:${r.email}?subject=${encodeURICom
   </section>
 
   <section class="wrap apply" id="apply" aria-labelledby="apply-title">
-    <SectionHead kicker="Apply by email" title="Tell us what you want to explore" lead="Send your application to molino@usp.br between 19 October and 19 November 2026. The deadline is 23:59 Brasília time (UTC−3) on 19 November." />
+    <SectionHead kicker="Apply by email" title="Tell us what you want to explore" lead={`Send your application to ${r.email} between ${r.opensLabel} and ${r.closesLabel}. The deadline is ${r.cutoffLabel} on ${r.closesLabel}.`} />
     <div class="apply-grid">
       <div>
         <h3 id="apply-title">Your application checklist</h3>
         <ol class="checklist">
           <li><strong>CV or Currículo Lattes</strong><span>Include relevant coursework, laboratory, research, internship or professional experience.</span></li>
-          <li><strong>Academic transcript</strong><span>Include your academic record. Formal admission documentation follows the program’s requirements.</span></li>
-          <li><strong>Short motivation statement</strong><span>Describe your interests, relevant preparation, why this project appeals to you and your availability to start.</span></li>
+          <li><strong>One-page motivation statement</strong><span>Describe your interests, relevant preparation, why this project appeals to you and your availability to start.</span></li>
         </ol>
-        <p class="small">Prepare your CV and motivation statement in English. If using a Portuguese Lattes profile, summarize your relevant experience in English in the statement. Original-language transcripts may be submitted for preliminary lab selection.</p>
+        <p class="small">Prepare your CV and motivation statement in English. If using a Portuguese Lattes profile, summarize your relevant experience in English in the statement. Formal graduate-admission documents follow the program’s requirements.</p>
         <p class="small">DD applicants may also include links to research outputs, a thesis, publications or preprints, when available. Publications are not mandatory.</p>
       </div>
       <aside class="email-panel card" aria-label="Email and required subjects">
@@ -139,8 +139,8 @@ const emailLink = (subject: string) => `mailto:${r.email}?subject=${encodeURICom
       <div>
         <h3>Selection by the lab</h3>
         <p>Applications will be assessed for motivation, scientific fit, relevant preparation and potential to develop. For the DD, we also consider experimental maturity and evidence of independence.</p>
-        <p>Shortlisted applicants will be invited to an interview and a brief presentation in English. MSc applicants can discuss coursework, internships, technical or professional experience if they have not conducted formal research.</p>
-        <p>We aim to complete lab selection by the end of 2026. Start dates will be agreed individually, subject to admission and fellowship activation.</p>
+        <p>Shortlisted applicants will be invited to book an <strong>online interview for {r.interviewsLabel}</strong>, including a brief presentation in English. MSc applicants can discuss coursework, internships, technical or professional experience if they have not conducted formal research.</p>
+        <p>We aim to complete lab selection by the end of 2026. The start date is <strong>negotiable within {r.startWindowLabel}</strong> to accommodate the selected candidate’s availability and existing commitments, subject to PPGBI admission and fellowship activation.</p>
       </div>
       <div>
         <h3>FAPESP support</h3>
